@@ -3,7 +3,6 @@ package com.sudip.kiranastore.controller;
 import com.sudip.kiranastore.entity.User;
 import com.sudip.kiranastore.service.UserService;
 import com.sudip.kiranastore.util.BLUtil;
-import com.sudip.kiranastore.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

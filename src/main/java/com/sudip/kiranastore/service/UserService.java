@@ -1,8 +1,6 @@
 package com.sudip.kiranastore.service;
 
 import com.sudip.kiranastore.entity.User;
-import com.sudip.kiranastore.util.ResponseUtil;
-import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
