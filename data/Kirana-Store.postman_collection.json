@@ -1,0 +1,506 @@
+{
+	"info": {
+		"_postman_id": "7466ed10-7c17-4b7f-b1c9-07bbe8716cdc",
+		"name": "Kirana-Store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "18824695"
+	},
+	"item": [
+		{
+			"name": "User_register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"sudip_biswas\",\n  \"password\": \"password1234\",\n  \"defaultCurrency\": \"INR\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/users/register"
+			},
+			"response": [
+				{
+					"name": "failure",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"sudipbiswas322\",\n  \"password\": \"password1234\",\n  \"defaultCurrency\": \"INR\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{HostName}}/api/users/register"
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Jan 2024 09:43:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"fail\",\n    \"reason\": {\n        \"reason_code\": \"ALREADY_PRESENT\",\n        \"reason_eng\": \"Username already exists\"\n    },\n    \"response_time\": \"2024-01-20 15:13:24\"\n}"
+				},
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"sudip_biswas\",\n  \"password\": \"password1234\",\n  \"defaultCurrency\": \"INR\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/users/register"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Jan 2024 15:12:19 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"result\": \"User registered successfully\",\n    \"response_time\": \"2024-01-20 20:42:19\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get_User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{HostName}}/api/users/1"
+			},
+			"response": [
+				{
+					"name": "failure",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "{{HostName}}/api/users/4"
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Jan 2024 09:45:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"fail\",\n    \"reason\": {\n        \"reason_code\": \"NOT_FOUND\",\n        \"reason_eng\": \"User not found\"\n    },\n    \"response_time\": \"2024-01-20 15:15:43\"\n}"
+				},
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "{{HostName}}/api/users/5"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Jan 2024 15:13:05 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"result\": {\n        \"id\": 5,\n        \"username\": \"sudip_biswas\",\n        \"password\": \"$2a$10$JEqM5mDwnSm2cxwUY9GGbe0Azbnq2ZozTDOueYx.BVFCqCzL8kzGK\",\n        \"balance\": 0,\n        \"defaultCurrency\": \"INR\"\n    },\n    \"response_time\": \"2024-01-20 20:43:05\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Daily_Report",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "username",
+						"value": "sudipbiswas322",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"amount\": 1000.00,\n  \"type\": \"DEBIT\",\n  \"currency\": \"USD\",\n  \"description\": \"Sale transaction\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HostName}}/api/transactions/daily-report?date=2024-01-20",
+					"host": [
+						"{{HostName}}"
+					],
+					"path": [
+						"api",
+						"transactions",
+						"daily-report"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2024-01-20"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "username",
+								"value": "sudipbiswas322",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"amount\": 1000.00,\n  \"type\": \"DEBIT\",\n  \"currency\": \"USD\",\n  \"description\": \"Sale transaction\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HostName}}/api/transactions/daily-report?date=2024-01-20",
+							"host": [
+								"{{HostName}}"
+							],
+							"path": [
+								"api",
+								"transactions",
+								"daily-report"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "2024-01-20"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Jan 2024 15:01:38 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"result\": [\n        {\n            \"id\": 6,\n            \"amount\": 82992.18,\n            \"type\": \"CREDIT\",\n            \"currency\": \"INR\",\n            \"transactionDate\": \"2024-01-20\",\n            \"description\": \"Sale transaction\"\n        },\n        {\n            \"id\": 7,\n            \"amount\": 1000,\n            \"type\": \"CREDIT\",\n            \"currency\": \"INR\",\n            \"transactionDate\": \"2024-01-20\",\n            \"description\": \"Sale transaction\"\n        },\n        {\n            \"id\": 8,\n            \"amount\": 1000,\n            \"type\": \"DEBIT\",\n            \"currency\": \"INR\",\n            \"transactionDate\": \"2024-01-20\",\n            \"description\": \"Sale transaction\"\n        },\n        {\n            \"id\": 9,\n            \"amount\": 82992.17,\n            \"type\": \"DEBIT\",\n            \"currency\": \"INR\",\n            \"transactionDate\": \"2024-01-20\",\n            \"description\": \"Sale transaction\"\n        },\n        {\n            \"id\": 10,\n            \"amount\": 82992.17,\n            \"type\": \"DEBIT\",\n            \"currency\": \"INR\",\n            \"transactionDate\": \"2024-01-20\",\n            \"description\": \"Sale transaction\"\n        }\n    ],\n    \"response_time\": \"2024-01-20 20:31:38\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Submit_Transaction",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "username",
+						"value": "sudip_biswas",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"amount\": 1000.00,\n  \"type\": \"CREDIT\",\n  \"currency\": \"INR\",\n  \"description\": \"Sale transaction\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{HostName}}/api/transactions/"
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "username",
+								"value": "sudip_biswas",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"amount\": 1000.00,\n  \"type\": \"CREDIT\",\n  \"currency\": \"INR\",\n  \"description\": \"Sale transaction\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{HostName}}/api/transactions/"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Jan 2024 15:15:48 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"result\": \"Transaction recorded successfully\",\n    \"response_time\": \"2024-01-20 20:45:48\"\n}"
+				},
+				{
+					"name": "failure",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "username",
+								"value": "sudip_biswas",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"amount\": -100.00,\n  \"type\": \"CREDIT\",\n  \"currency\": \"INR\",\n  \"description\": \"Sale transaction\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{HostName}}/api/transactions/"
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Jan 2024 15:16:56 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"fail\",\n    \"reason\": {\n        \"reason_code\": \"INVALID_PARAMETER\",\n        \"reason_eng\": \"Invalid transaction amount. Amount should be positive.\"\n    },\n    \"response_time\": \"2024-01-20 20:46:56\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get_Transactions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "username",
+						"value": "sudip_biswas"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"amount\": -100.00,\n  \"type\": \"CREDIT\",\n  \"currency\": \"INR\",\n  \"description\": \"Sale transaction\"\n}"
+				},
+				"url": "{{HostName}}/api/transactions/"
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "username",
+								"value": "sudip_biswas"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"amount\": -100.00,\n  \"type\": \"CREDIT\",\n  \"currency\": \"INR\",\n  \"description\": \"Sale transaction\"\n}"
+						},
+						"url": "{{HostName}}/api/transactions/"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Jan 2024 15:17:39 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"result\": [\n        {\n            \"id\": 1,\n            \"amount\": 1000,\n            \"type\": \"DEBIT\",\n            \"currency\": \"INR\",\n            \"transactionDate\": \"2024-01-20\",\n            \"description\": \"Sale transaction\"\n        },\n        {\n            \"id\": 2,\n            \"amount\": 82992.17,\n            \"type\": \"DEBIT\",\n            \"currency\": \"INR\",\n            \"transactionDate\": \"2024-01-20\",\n            \"description\": \"Sale transaction\"\n        },\n        {\n            \"id\": 3,\n            \"amount\": 82992.17,\n            \"type\": \"CREDIT\",\n            \"currency\": \"INR\",\n            \"transactionDate\": \"2024-01-20\",\n            \"description\": \"Sale transaction\"\n        },\n        {\n            \"id\": 4,\n            \"amount\": 1000,\n            \"type\": \"CREDIT\",\n            \"currency\": \"INR\",\n            \"transactionDate\": \"2024-01-20\",\n            \"description\": \"Sale transaction\"\n        }\n    ],\n    \"response_time\": \"2024-01-20 20:47:39\"\n}"
+				}
+			]
+		}
+	]
+}
